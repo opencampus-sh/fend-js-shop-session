@@ -1,0 +1,20 @@
+.cart {
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+  transition: transform 1s ease-in;
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.product {
+  display: block;
+  margin-bottom: 3rem;
+}

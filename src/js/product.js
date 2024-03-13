@@ -1,6 +1,7 @@
 import { fetchProducts } from "./productHelpers";
 import productImgPath from "../images/product.jpg";
 import { getProductId } from "./productHelpers";
+import { addToCart } from "./cart";
 
 const product = async () => {
   const productData = await fetchProducts();
@@ -22,11 +23,15 @@ const product = async () => {
       <div class="product-description">
         ${product.description}
       </div>
+      <button data-id="${product.id}" class="add-to-cart-button">In den Warenkorb</button>
     </div>
   `;
 
   const productContainer = document.querySelector(".product-container");
   productContainer.innerHTML = productHtml;
+  const addToCartButton = document.querySelector(".add-to-cart-button");
+
+  addToCartButton.addEventListener("click", addToCart);
 };
 
 product();
